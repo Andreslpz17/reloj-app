@@ -60,6 +60,8 @@ export class TimerComponent implements OnInit {
     this.date.setMinutes(this.minutes);
     this.date.setSeconds(this.seconds);
     this.date.setMilliseconds(0);
+    const time = this.date.getTime();
+    this.date.setTime(time - 1000);
 
     this.hours = this.date.getHours();
     this.minutes = this.date.getMinutes();
@@ -80,7 +82,7 @@ export class TimerComponent implements OnInit {
   }
 
   stop(){
-    this.disabled = true;
+    this.disabled = false;
     this.show = true;
     this.animate = false;
     clearInterval(this.timer);
