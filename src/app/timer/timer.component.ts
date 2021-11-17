@@ -87,7 +87,7 @@ export class TimerComponent implements OnInit {
     this.idAudio.nativeElement.load();
   }
 
-  reseat(){
+  reset(){
     this.hours = 0;
     this.minutes = 0,
     this.seconds = 0;

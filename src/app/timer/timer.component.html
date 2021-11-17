@@ -15,17 +15,17 @@
       </div>
     </div>
     <div class="content-s">
-      <div class="time"> <span>s</span></div>
-      <div class="content-btn">
-        <button> + </button>
-        <button> - </button>
+      <div class="time"> {{ seconds | number:'2.0' }}<span>s</span></div>
+      <div class="content-btn" >
+        <button (click)="increment('S')"> + </button>
+        <button  (click)="decrement('S')"> - </button>
       </div>
     </div>
   </div>
   <div class="content-btn-action">
-    <button type="button">&#9658;</button>
-    <button type="button">&#9724;</button>
-    <button type="button">&#8635;</button>
+    <button type="button" (click)="start()" [disabled]="disabled">&#9658;</button>
+    <button type="button" (click)="stop()">&#9724;</button>
+    <button type="button" (click)="reset()">&#8635;</button>
   </div>
   <audio #idAudio controls class="dnone" >
     <source type="audio/wav" src="../../assets/Sound The Alarm - TrackTribe.mp3">
